@@ -13,4 +13,11 @@ urlpatterns = [
     path('about-project/', about_project, name='about-project'),
     path('about-members/', about_members, name='about-members'),
     path('member-contacts', member_contacts, name='member-contacts'),
+
+    path('bootstrap/index', boot_index, name='boot-index'),
+    path('bootstrap/men', boot_men, name='boot-men'),
+    path('bootstrap/women', boot_women, name='boot-women'),
+    path('bootstrap/contacts', boot_contacts, name='boot-contacts'),
+    path('bootstrap/login', boot_login, name='boot-login'),
+    path('bootstrap/signup', boot_signup, name='boot-signup'),
 ]

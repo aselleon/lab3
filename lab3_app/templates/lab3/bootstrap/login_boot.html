@@ -1,0 +1,31 @@
+{% extends 'lab3/bootstrap/template_boot.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="../../../static/styles_boot/login_boot.css">
+
+{% endblock %}
+<body>
+
+{% block content %}
+    <div class="form-container d-flex mx-auto">
+        <form class="login-form m-auto flex-column">
+            <div class="d-flex justify-content-around mt-4">
+                <input type="email" name="email" placeholder="email">
+            </div>
+            <div class="d-flex justify-content-around mt-4">
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <div class="d-flex justify-content-around my-4">
+                <a href="#">Login</a>
+                <a href="signup_boot.html">Sign up</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'lab3/bootstrap/template_boot.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="../../../static/styles_boot/women_boot.css">
+{% endblock %}
+<body>
+{% block content %}
+    <div class="container-fluid itemsContainer">
+        <div class="row menH1_row mx-auto">
+            <div class="col">
+                <h2 class="menH1 text-center">Women Shoes</h2>
+            </div>
+        </div>
+        <div class="row itemsRow mx-auto">
+            <div class="col items">
+                <div class="items">
+                    {% for shoe in shoes %}
+                        <div class="item">
+                            <img src='{% static "images/shoes/" %}{{ shoe.get_url }}' class="itemsImg">
+                            <div class="shoesName">{{ shoe.get_name }}</div>
+                            <div class="shoesInfo" style="display:none">
+                                <p class="shoesNameP">{{ shoes.get_name }}</p>
+                                <p class="price">{{ shoe.get_price }}</p>
+                                <div class="sizes">
+                                    <span>size:</span>
+                                    {% for size in shoe.get_sizes %}
+                                        <div class="size">{{ size }}</div>
+                                    {% endfor %}
+                                </div>
+                                <a href="#" class="addToCart">Add to cart</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

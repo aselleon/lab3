@@ -1,0 +1,46 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/about-project.css' %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+{% endblock %}
+<body>
+{% block content %}
+    <div class="description">
+        <h2 class="display-5">
+            Our project work is “Online shoes shop website”.
+            <br>
+            Our website consists of these pages:
+        </h2>
+        <ol class>
+            <li>
+                <p>Home page</p>
+                <p>At this page we have brand-new shoes banners, new collections of shoes</p>
+            </li>
+            <li>
+                <p>Men shoes catalogue</p>
+                <p>At this page we have list of all men shoes are in stock at the store</p>
+            </li>
+
+            <li>
+                <p>Women shoes catalogue</p>
+                <p>Same as men shoes, but here we show women shoes</p>
+            </li>
+
+            <li>
+                <p>Contacts</p>
+                <p> Main information – email address, phone numbers, location, map and form with questions.</p>
+            </li>
+            <li>
+                <p>Login/Registration</p>
+                <p>Simple login system and registration form for users and for administrator also(in future)</p>
+            </li>
+        </ol>
+    </div>
+{% endblock %}
+</body>
+</html>

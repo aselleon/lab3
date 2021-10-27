@@ -1,0 +1,25 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/signup.css' %}'>
+{% endblock %}
+
+{% block content %}
+    <div class="divContainer">
+        <form class="formClass">
+            <input type="email" name="" placeholder="email" class="email">
+            <input type="text" name="name" placeholder="name">
+            <input type="text" name="name" placeholder="phone number">
+            <input type="password" name="" placeholder="password">
+
+
+            <div class="formDiv">
+                <a href="#">Signup</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

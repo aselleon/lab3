@@ -1,0 +1,46 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/contacts.css' %}'>
+{% endblock %}
+<body>
+{% block content %}
+    {% for member in members %}
+        <div class="contactsContainer">
+            <h1 style="color: white; margin:0 50%">{{ key }}</h1>
+            <div class="insideContainer">
+                <div class="contacts3Divs">
+                    <div class="divCont">
+                        <div class="imgDiv imgDiv1"><img src="{% static 'images/1.png' %}" width="30px" height="25px">
+                        </div>
+                        <div class="textDiv">
+                            <h2>EMAIL</h2>
+                            {{ member.email }}
+                        </div>
+                    </div>
+                    <div class="divCont">
+                        <div class="imgDiv imgDiv2"><img src="{% static 'images/2.png' %}" height="50px" width="50px">
+                        </div>
+                        <div class="textDiv">
+                            <h2>OUR OFFICE</h2>
+                            {{ member.address }}
+                        </div>
+                    </div>
+                    <div class="divCont">
+                        <div class="imgDiv imgDiv3"><img src="{% static 'images/3.png' %}" width="35px" height="35px">
+                        </div>
+                        <div class="textDiv">
+                            <h2>PHONE</h2>
+                            {{ member.phone }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

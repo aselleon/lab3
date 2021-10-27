@@ -1,0 +1,41 @@
+{% extends 'lab3/bootstrap/template_boot.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="../../../static/styles_boot/home_boot.css">
+{% endblock %}
+<body>
+
+{% block content %}
+    <div class="container-fluid banner-background">
+        <div class="row banner-row mx-auto">
+            <div class="col banner-col d-flex">
+                <img class="banner-image" src='{% static 'images/banner_1.png' %}'>
+                <div class="banner-info">
+                    <h3>Lorem ipsum dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam turpis, commodo vel tortor
+                        at,
+                        elementum
+                        viverra nisi. Morbi lectus.</p>
+                    <button class="banner-button">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid collectionContainer">
+        <div class="row collectionContainerTitleRow mt-5 mx-auto">
+            <div class="col collection-title">NEW COLLECTION</div>
+        </div>
+        <div class="row collectionContainerRow mt-5 mx-auto">
+            <div class="col collection-container">
+                <img src='{% static 'images/collection1.jpg' %}'>
+                <img src='{% static 'images/collection2.jpg' %}'>
+                <img src='{% static 'images/collection3.jpg' %}'>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
