@@ -15,7 +15,7 @@
         <div class="items">
             {% for shoe in shoes %}
                 <div class="item">
-                    <img src='{% static "images/shoes/" %}{{ shoe.get_url }}' class="itemsImg">
+                    <img src='{{ shoe.get_url }}' class="itemsImg">
                     <div class="shoesName">{{ shoe.get_name }}</div>
                     <div class="shoesInfo" style="display:none">
                         <p class="shoesNameP">{{ shoes.get_name }}</p>
@@ -23,7 +23,7 @@
                         <div class="sizes">
                             <span>size:</span>
                             {% for size in shoe.get_sizes %}
-                                <div class="size">{{ size }}</div>
+                                <div class="size">{{ size.size }}</div>
                             {% endfor %}
                         </div>
                         <a href="#" class="addToCart">Add to cart</a>

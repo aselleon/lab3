@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from lab3_app.classes import *
-
+from lab3_app.crud import *
 
 # Create your views here.
 
@@ -9,27 +8,13 @@ def index(request):
 
 
 def men(request):
-    shoes = [
-        Shoe("shoe1", "100$", [40, 41, 42], "shoe1.png"),
-        Shoe("shoe2", "130$", [42, 43, 45], "shoe2.png"),
-        Shoe("shoe3", "120$", [40, 43, 44], "shoe3.png"),
-        Shoe("shoe4", "140$", [40, 41, 42, 43, 45], "shoe4.png"),
-        Shoe("shoe5", "124$", [40], "shoe5.png"),
-        Shoe("shoe6", "129$", [40, 41], "shoe6.png"),
-    ]
+    shoes = get_all_men_shoes()
     data = {"shoes": shoes}
     return render(request, "lab3/html&css/men.html", context=data)
 
 
 def women(request):
-    shoes = [
-        Shoe("shoe7", "100$", [40, 41, 42], "shoe7.png"),
-        Shoe("shoe8", "130$", [42, 43, 45], "shoe8.png"),
-        Shoe("shoe9", "120$", [40, 43, 44], "shoe9.png"),
-        Shoe("shoe10", "140$", [40, 41, 42, 43, 45], "shoe10.png"),
-        Shoe("shoe11", "124$", [40], "shoe11.png"),
-        Shoe("shoe12", "129$", [40, 41], "shoe12.png"),
-    ]
+    shoes = get_all_women_shoes()
     data = {"shoes": shoes}
     return render(request, "lab3/html&css/women.html", context=data)
 

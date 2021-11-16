@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lab3_app.apps.Lab3AppConfig', # our app
+    'lab3_app.apps.Lab3AppConfig',  # our app
 ]
 
 MIDDLEWARE = [
@@ -123,3 +123,6 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'lab3_app/static/media')
+MEDIA_URL = 'lab3_app/static/media/'
