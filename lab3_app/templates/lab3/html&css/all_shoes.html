@@ -1,0 +1,41 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/change-form.css' %}'>
+{% endblock %}
+{% block content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>For man</th>
+            <th>For child</th>
+            <th>Country</th>
+            <th>Company</th>
+            <th>Price</th>
+            <th>Is purchasable</th>
+            <th>Edit</th>
+        </tr>
+        {% for shoe in shoes %}
+            <tr>
+                <td>{{ shoe.name }}</td>
+                <td><img src='{{ shoe.image.url }}' alt="{{ shoe.name }}"></td>
+                <td>{{ shoe.description }}</td>
+                <td>{{ shoe.for_man }}</td>
+                <td>{{ shoe.for_child }}</td>
+                <td>{{ shoe.country }}</td>
+                <td>{{ shoe.company }}</td>
+                <td>{{ shoe.price }}</td>
+                <td>{{ shoe.is_purchasable }}</td>
+                <td>
+                    <button></button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+</html>

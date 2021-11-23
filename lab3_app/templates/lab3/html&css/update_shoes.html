@@ -1,0 +1,50 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/change-form.css' %}'>
+{% endblock %}
+{% block content %}
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>{{ shoe.name }}</td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><img src='{{ shoe.image.url }}' alt="shoe.name"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ shoe.description }}</td>
+        </tr>
+        <tr>
+            <td>For man</td>
+            <td>{{ shoe.for_man }}</td>
+        </tr>
+        <tr>
+            <td>For child</td>
+            <td>{{ shoe.for_child }}</td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>{{ shoe.country }}</td>
+        </tr>
+        <tr>
+            <td>Company</td>
+            <td>{{ shoe.company }}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{ shoe.price }}</td>
+        </tr>
+        <tr>
+            <td>Is purchasable</td>
+            <td>{{ shoe.is_purchasable }}</td>
+        </tr>
+    </table>
+    <form
+{% endblock %}
+</html>
