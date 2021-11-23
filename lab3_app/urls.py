@@ -12,8 +12,9 @@ urlpatterns = [
     path('signup/', signup, name='singup'),
     path('about-project/', about_project, name='about-project'),
     path('about-members/', about_members, name='about-members'),
-    path('member-contacts', member_contacts, name='member-contacts'),
-
+    path('member-contacts/', member_contacts, name='member-contacts'),
+    path('add-shoes/', add_shoes, name='add-shoes'),
+    path('change-shoes/', all_shoes, name='change-shoes'),
     path('bootstrap/index', boot_index, name='boot-index'),
     path('bootstrap/men', boot_men, name='boot-men'),
     path('bootstrap/women', boot_women, name='boot-women'),

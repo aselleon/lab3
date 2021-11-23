@@ -19,14 +19,14 @@ class Users(models.Model):
 
 
 class Shoes(models.Model):
-    name = models.TextField(max_length=50)
+    name = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
     for_man = models.BooleanField(default=True)
     for_child = models.BooleanField(default=True)
     image = models.ImageField(upload_to="images/")
-    country = models.TextField(max_length=50)
-    company = models.TextField(max_length=100)
-    price = models.PositiveIntegerField(default=0)
+    country = models.CharField(max_length=50)
+    company = models.CharField(max_length=100)
+    price = models.PositiveIntegerField()
     is_purchasable = models.BooleanField(default=False)
 
 

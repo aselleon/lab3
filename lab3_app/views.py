@@ -1,10 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from lab3_app.crud import *
+from .forms import *
+
 
 # Create your views here.
 
 def index(request):
     return render(request, "lab3/html&css/index.html")
+
+
+def all_shoes(request):
+    shoes = Shoes.objects.all()
+    context = {
+        'shoes': shoes
+    }
+    return render(request, 'lab3/html&css/all_shoes.html', context=context)
+
+
+def add_shoes(request):
+    if request.method == 'POST':
+        form = AddShoesForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AddShoesForm()
+
+    return render(request, 'lab3/html&css/form-input-shoes.html', {"form": form})
+
+
+def update_shoes(request):
+    if request.method == 'POST':
+        form = UpdateShoesForm(request.POST, request.FILES)
 
 
 def men(request):
