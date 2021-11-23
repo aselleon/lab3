@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href='{% static 'styles/change-form.css' %}'>
 {% endblock %}
 {% block content %}
+    <a class = "btn btn-sm btn-primary add-shoes" href = "{% url 'add-shoes' %}">Add shoes</a>
     <table>
         <tr>
             <th>Name</th>
@@ -19,6 +20,7 @@
             <th>Price</th>
             <th>Is purchasable</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
         {% for shoe in shoes %}
             <tr>
@@ -32,7 +34,10 @@
                 <td>{{ shoe.price }}</td>
                 <td>{{ shoe.is_purchasable }}</td>
                 <td>
-                    <button></button>
+                    <a class="btn btn-sm btn-info" href="{% url 'update_shoes' shoe.id %}">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-danger" href="{% url 'delete_shoes' shoe.id %}">Delete</a>
                 </td>
             </tr>
         {% endfor %}

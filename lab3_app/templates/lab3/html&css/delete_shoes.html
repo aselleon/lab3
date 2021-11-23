@@ -1,0 +1,22 @@
+{% extends 'lab3/html&css/template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href='{% static 'styles/change-form.css' %}'>
+{% endblock %}
+{% block content %}
+    <div class="delete-shoes">
+        <p class="">Are you sure you want to delete "{{ shoes.name }}"?</p>
+        <img width="150px" src="{{ shoes.image.url }}">
+        <form action="{% url 'delete_shoes' shoes.id %}" method="POST">
+
+            {% csrf_token %}
+            <a class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+
+            <input class="btn btn-danger" type="submit" name="Delete">
+        </form>
+    </div>
+{% endblock %}
+</html>

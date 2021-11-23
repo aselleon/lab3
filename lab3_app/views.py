@@ -22,16 +22,33 @@ def add_shoes(request):
         form = AddShoesForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('all-shoes')
     else:
         form = AddShoesForm()
 
     return render(request, 'lab3/html&css/form-input-shoes.html', {"form": form})
 
 
-def update_shoes(request):
+def update_shoes(request, pk):
+    shoes = Shoes.objects.get(id=pk)
+    form = AddShoesForm(instance=shoes)
     if request.method == 'POST':
-        form = UpdateShoesForm(request.POST, request.FILES)
+        form = AddShoesForm(request.POST, request.FILES, instance=shoes)
+        form.save()
+        return redirect('/lab3/all-shoes')
+
+    context = {'form': form}
+    return render(request, 'lab3/html&css/form-input-shoes.html', context)
+
+
+def delete_shoes(request, pk):
+    shoes = Shoes.objects.get(id=pk)
+    if request.method == "POST":
+        shoes.delete()
+        return redirect('/lab3/all-shoes')
+
+    context = {'shoes': shoes}
+    return render(request, 'lab3/html&css/delete_shoes.html', context)
 
 
 def men(request):

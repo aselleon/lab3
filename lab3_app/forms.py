@@ -11,8 +11,3 @@ class AddShoesForm(forms.ModelForm):
         model = Shoes
         fields = '__all__'
 
-
-class UpdateShoesForm(UpdateView):
-    model = Shoes
-    fields = '__all__'
-

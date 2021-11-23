@@ -101,14 +101,20 @@ nav {
 
 /*_______SECTION_MAIN___________-*/
 
-table {
-    background-color: rgba(0, 0, 0, .04);
-    backdrop-filter: blur(5px);
+.add-shoes{
     width: 80%;
-    margin: 150px auto 0 auto;
+    margin: 150px 0 20px 100px;
 }
 
-table, th ,td{
+table {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .04);
+    backdrop-filter: blur(5px);
+    width: 90%;
+    margin: 0 auto;
+}
+
+table, th, td {
     border-collapse: collapse;
     border: 1px solid white;
 }
@@ -123,6 +129,12 @@ table td {
 
 table img {
     width: 150px;
+}
+
+.delete-shoes {
+    align-items: center;
+    margin: 150px auto 0 auto;
+    width: 80%;
 }
 
 /*_________FOOTER_________*/
